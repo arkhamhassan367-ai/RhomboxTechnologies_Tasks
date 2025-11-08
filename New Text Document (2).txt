@@ -1,3 +1,4 @@
+#Question 1: C++
 #include <iostream>
 using namespace std;
 int main() {
@@ -41,6 +42,7 @@ int main() {
 	return 0;
 }
 ----------------------------------------------------------------------------------------------
+#Question 2 : Python
 def fibonacci(n):
     a, b = 0, 1
     print("Fibonacci Series:")
@@ -52,3 +54,4 @@ if n_terms <= 0:
     print("Please enter a positive integer.")
 else:
     fibonacci(n_terms)
+
