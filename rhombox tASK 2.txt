@@ -1,0 +1,108 @@
+grades = {}
+num_subjects = int(input("How many subjects do you want to enter grades for? "))
+
+for i in range(num_subjects):
+    subject = input("Enter subject name: ")
+    grade = float(input("Enter grade for " + subject + ": "))
+    grades[subject] = grade
+
+total = 0
+for grade in grades.values():
+    total += grade
+
+average = total / len(grades)
+
+print("\nGrades:")
+for subject, grade in grades.items():
+    print(subject + ": " + str(grade))
+
+print("Average grade: " + str(average))
+---------------------------------------------------------------------------------------------------------------------
+#include <iostream>
+#include <string>
+using namespace std;
+int startQuiz() {
+    int score = 0;
+    char answer;
+
+    cout << "\nQuestion 1: When did Pakistan become independent?\n";
+    cout << "a) 1945\nb) 1947\nc) 1950\nd) 1960\n";
+    cout << "Your answer: ";
+    cin >> answer;
+    if(answer == 'b' || answer == 'B') {
+        cout << "Correct!\n";
+        score++;
+    } else {
+        cout << "Wrong! Correct answer: b) 1947\n";
+    }
+
+    cout << "\nQuestion 2: Who was the founder of Pakistan?\n";
+    cout << "a) Allama Iqbal\nb) Liaquat Ali Khan\nc) Muhammad Ali Jinnah\nd) Zia-ul-Haq\n";
+    cout << "Your answer: ";
+    cin >> answer;
+    if(answer == 'c' || answer == 'C') {
+        cout << "Correct!\n";
+        score++;
+    } else {
+        cout << "Wrong! Correct answer: c) Muhammad Ali Jinnah\n";
+    }
+
+    cout << "\nQuestion 3: What is the national sport of Pakistan?\n";
+    cout << "a) Cricket\nb) Hockey\nc) Football\nd) Tennis\n";
+    cout << "Your answer: ";
+    cin >> answer;
+    if(answer == 'b' || answer == 'B') {
+        cout << "Correct!\n";
+        score++;
+    } else {
+        cout << "Wrong! Correct answer: b) Hockey\n";
+    }
+
+    cout << "\nQuestion 4: Pakistan shares border with which country to the east?\n";
+    cout << "a) India\nb) Afghanistan\nc) Iran\nd) China\n";
+    cout << "Your answer: ";
+    cin >> answer;
+    if(answer == 'a' || answer == 'A') {
+        cout << "Correct!\n";
+        score++;
+    } else {
+        cout << "Wrong! Correct answer: a) India\n";
+    }
+
+    cout << "\nQuestion 5: What is the national language of Pakistan?\n";
+    cout << "a) Urdu\nb) Punjabi\nc) Sindhi\nd) Pashto\n";
+    cout << "Your answer: ";
+    cin >> answer;
+    if(answer == 'a' || answer == 'A') {
+        cout << "Correct!\n";
+        score++;
+    } else {
+        cout << "Wrong! Correct answer: a) Urdu\n";
+    }
+
+    return score;
+}
+
+int main() {
+    string username;
+    cout << "Welcome to the Pakistan History Quiz Game!\n";
+    cout << "Please register by entering your name: ";
+    getline(cin, username);
+
+    cout << "\nHello, " << username << "! Get ready to start the quiz.\n";
+    
+    int totalScore = startQuiz();
+    
+    cout << "\nQuiz completed!\n";
+    cout << username << ", your total score is: " << totalScore << "/5\n";
+
+    if(totalScore == 5) {
+        cout << "Excellent! You know Pakistan history very well.\n";
+    } else if(totalScore >= 3) {
+        cout << "Good job! But there is room to improve.\n";
+    } else {
+        cout << "Better luck next time! Keep learning about Pakistan history.\n";
+    }
+
+    return 0;
+}
